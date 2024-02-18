@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>QuikVote - {{title}}</title>
+    {% else %}
+        <title>QuikVote</title>
+    {% endif %}
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">QuikVote</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="{{url_for('register')}}">Sign Up</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li> -->
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('account') }}" id="loginBtn">Account</a></li>
+                <li><a href="{{ url_for('logout') }}" id="loginBtn">Logout</a></li>
+            {% else %} 
+                <li><a href="{{ url_for('login') }}" id="loginBtn">Login</a></li>
+                <li><a href="{{url_for('register')}}" id="registerBtn">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="flash">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages%}    
+                {% for category, message in messages%}
+                    <div>
+                        {{message}}
+                    </div>
+                {% endfor %}    
+            {% endif %}    
+        {% endwith %}
+    </div>
+
+    <!-- Your content goes here -->
+    <section class="sect1">
+        <div class="container">
+            <div class="left">
+                <h1>Welcome to <span>QuikVote</span></h1>
+                <p id="p1">Transforming Opinions into Action, One Click at a Time!</p>
+                <!-- <p>Ignite Change with the Speed of Your Vote.</p> -->
+                <br>
+                <br>
+                <br>
+                <br>
+                {% if current_user.is_authenticated %}
+                    <a id="create" href="{{url_for('create_election')}}">Create Election</a>
+                {% else %} 
+                    <a id="create" href="{{ url_for('login') }}">Create Election</a>
+                {% endif %}
+            </div>
+            <div class="right">
+                <img class="img1" src="static/images/young_man.jpeg" alt="image">
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="sect1">
+        <div>
+
+            <div>
+                <h2 class=""> Why Choose QuikVote </h2>
+            </div>
+
+            <div class="container2">
+                <div class="left">
+                    <h3>Secure & Transparent</h3>
+                    <p>Our platform ensures the integrity of every vote with advanced encryption and transparent audit
+                        trails. We employ state-of-the-art security measures to safeguard against unauthorized access
+                        and
+                        tampering.</p>
+                </div>
+                <div class="right">
+                    <img class="img_right2" src="static/images/secure.jpeg" alt="Security Icon">
+                </div>
+            </div>
+
+            <div class="container3">
+                <div class="right">
+                    <h3>Easy-to-Use Interface</h3>
+                    <p>Voters of all ages and technical abilities can effortlessly cast their ballots with our intuitive
+                        interface. Our user-friendly design eliminates confusion and streamlines the voting process.</p>
+                </div>
+                <div class="left">
+                    <img class="img_left" id="img_sizing3" src="static/images/easy.jpeg" alt="Easy-to-Use Icon">
+                </div>
+            </div>
+
+            <div class="container4">
+                <div class="left">
+                    <h3>Customizable Elections</h3>
+                    <p>Unlock the power of Customizable Elections, where you wield complete control over every facet of your voting process. Seamlessly adjust parameters such as ballot options, voting methods, and candidate criteria to perfectly align with your unique objectives</p>
+                </div>
+                <div class="right">
+                    <img class="img_right4" src="static/images/customized.jpeg" alt="customized icon">
+                </div>
+            </div>
+
+            <div class="container5">
+                <div class="right">
+                    <h3>Transparent Results</h3>
+                    <p>QuikVote guarantees transparency and trust through its real-time election results feature.
+                        With instant updates, voters can witness the integrity of the voting process firsthand,
+                        fostering confidence in the outcome. Experience peace of mind knowing that every vote is
+                        accurately accounted for and openly accessible.</p>
+                </div>
+                <div class="left">
+                    <img class="img_left5" src="static/images/result2.jpeg" alt="Results">
+                </div>
+            </div>
+
+            <div class="container6">
+                <div class="left">
+                    <h3>24/7 Customer Support</h3>
+                    <p>Our dedicated support team is available around the clock to assist you with any questions or
+                        concerns. Whether you need technical assistance or guidance on best practices, we're here to
+                        help.
+                    </p>
+                </div>
+                <div class="right">
+                    <img class="img_right6" src="static/images/customer_support.jpeg" alt="Support Icon">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=" ">
+        <div class="benefit_container">
+            <div>
+                <h2 class="benefit_h2">Benefits of Online Voting with QuikVote</h2>
+            </div>
+        </div>
+        <div class="container7">
+            <div>
+                <h3 class="benefit_h3a"> Convenience</h3>
+            </div>
+            <div class="image">
+                <img id="convenience_img" src="static/images/convenience2.jpeg" alt="Convenience Icon">
+            </div>
+            <div>
+                <p class="p_benefit">Voters can cast their ballots from anywhere, at any time, using any
+                    internet-connected device. Say goodbye to long lines and inconvenient polling locations.</p>
+            </div>
+        </div>
+
+        <div class="container8">
+            <div>
+                <h3 class="speed_h3">Speed</h3>
+            </div>
+            <div class="image">
+                <img id="convenience_img" src="static/images/speed.jpeg" alt="Speed Icon">
+            </div>
+            <div>
+                <p class="p_benefit">Results are tabulated instantly, providing timely and accurate election outcomes.
+                    No more waiting days or weeks for manual counting.
+                </p>
+            </div>
+        </div>
+
+        <div class="container9">
+            <div>
+                <h3 class="environmental_h3"> Eco Friendly</h3>
+            </div>
+            <div class="image">
+                <img id="environmental_img" src="static/images/friendly2.jpeg" alt="Environment Icon">
+
+            </div>
+            <div class="p_div_benefit9">
+                <p class="p_benefit9">Reduce paper waste and carbon footprint by transitioning to online voting. Embrace
+                    sustainability while modernizing the electoral process.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container12">
+            <div>
+                <h2>About QuikVote</h2>
+            </div>
+            <div>
+                 <p>QuikVote was created because I saw problems with how traditional voting worked.
+                    Things like long lines at polling places, mistakes in counting votes, and people
+                    not being able to vote prompted me to find a better way.</p>
+
+                 <p>I'm passionate about democracy and innovation, so I wanted to fix these problems by
+                    making voting easier and more secure. QuikVote is my solution an online platform where
+                    everyone can vote easily and trust the results. As a project for <a href="https://www.holbertonschool.com" target="_blank" rel="noopener noreferrer">Holberton School</a>, my team
+                    and I are dedicated to making QuikVote the best it can be for everyone.</p>
+
+                 <p id="contact">Connect with our team members on <a href="http://www.linkedin.com/in/blessing-okafor-b5b0a81b4">LinkedIn</a>, <a href="https://github.com/beekaz">GitHub</a>, and <a href="https://twitter.com/IniJustine2">Twitter</a>.</p>
+
+                 <p> Explore our project on <a href="#">GitHub Repository</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- End About Section -->
+    <section class="cta">
+        <div class="container10">
+            <h2>Get Started Today</h2>
+            <a href="{{url_for('register')}}" class="sign_up_btn">Sign Up Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container11">
+            <p>&copy; 2024 QuikVote. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

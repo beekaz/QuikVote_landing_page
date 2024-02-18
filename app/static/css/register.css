@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #edecec;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.signup-container {
+    text-align: center;
+}
+
+#quikVote {
+    color: teal;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+  font-family: 'Pacifico', cursive;
+}
+
+
+.signup-form {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 600px;
+    margin:auto;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group-submit {
+    margin-bottom: 12px;
+    padding: 7px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #716b6b;
+    border-radius: 8px;
+    box-sizing:border-box;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #008080;
+}
+
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: teal;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #006666;
+}
+
+.small-text {
+    font-size: 80%;
+    color: #555;
+}
+
+#remember {
+    font-size: small;
+}
+
+.custom-submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-submit-button:hover {
+    background-color: #008080;
+}
+
+.profile_img {
+    height: 10%;
+    width: 10%;
+}

@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: large;
+}
+
+#nav {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    color: teal;
+    text-align: center;
+    /*background-color: #333;*/
+    margin: 0;
+    background-size: contain;
+    padding-top: 40px;
+}
+
+.body {
+    font-size: 35px;
+    font-family: Arial;
+    text-align: center;
+    color: #333;
+}
+
+#form {
+    
+    justify-content: center; /* this is to get the div to the middle all 3*/
+    align-items: center;
+    display: flex;
+}
+
+.start {
+    margin-right: 180px;
+}
+
+#candidate {
+    margin-right: 174px;
+}
+
+#placeholder1 {
+    font-size:medium;
+    width: 197px;
+    margin-right: 40px; /* spacing between the box*/
+}
+
+#placeholder2 {
+    font-size:medium;
+    width: 197px;
+}
+
+#time {
+    width: 446px;
+    font-size:medium;
+}
+
+#time_1 {
+    width: 200px;
+    margin-right: 40px; /* spacing between the box*/
+    font-size:larger;
+}
+#time_2 {
+    width: 200px;
+    font-size:larger;
+}
+
+.center {
+    margin-bottom: 25px;
+
+}
+
+.button {
+    display: inline-block;
+    font-size:larger;
+    font-weight: bold;
+    padding: 7px 10px;
+    background-color: rgb(33, 185, 135);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+

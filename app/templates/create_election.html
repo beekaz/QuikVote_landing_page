@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/create_election.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1 id="nav">QuikVote</h1>
+    </nav>
+    <div>
+        <h1 class="body">Create Election</h1>
+    </div>
+    <div id="form">
+        <form action="" method="post">
+            <div class="center">
+                <label for="">Title</label>
+                <br>
+                <input type="text" name="" id="time" placeholder="Title of Election / Positon">
+            </div> 
+
+            <div class="center">
+                <label id="candidate" for="">Candidates</label>
+                <label for="">Voters</label>
+                <br>
+                <input type="number" name="" id="placeholder1" placeholder="Number of Candidates">
+                <input type="number" name="" id="placeholder2" placeholder="Number of Voters">
+            </div>
+
+            <div>
+                <label class="start">Start Date</label>
+                <label for="">End Date</label>
+                <br> 
+                <input type="datetime-local" name="" id="time_1">
+                <input type="datetime-local" name="" id="time_2">
+            </div> 
+            <div>
+                <a href="{{ url_for('login') }}" class="button">Continue</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

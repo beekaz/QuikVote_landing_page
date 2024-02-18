@@ -1,0 +1,70 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+    <div class="signup-container">
+        <h1 id="quikVote"><a href="{{ url_for('home') }}">QuikVote</a></h1>
+        <form action="" method="post" class="signup-form">
+            {{ form.hidden_tag() }}
+            
+            <fieldset>
+                <div class="form-group">
+                    {% if form.username.errors %}
+                        {{form.username}}
+                        <div>
+                            {% for error in form.username.errors%}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username}}
+                    {% endif %}
+                    
+                </div>
+                <div class="form-group">
+                    {% if form.email.errors %}
+                        {{form.email}}
+                        <div>
+                            {% for error in form.email.errors%}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {% if form.password.errors %}
+                        {{form.password}}
+                        <div>
+                            {% for error in form.password.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password }}
+                        <div>
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            
+            <div class="form-group-submit">
+                {{ form.submit(class="custom-submit-button") }}
+            </div>
+            
+            <div class="login-link">
+                <small>Already Have An Account? <a href="{{ url_for('login') }}">Login</a></small>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
